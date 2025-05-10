@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "satrt": "node server.js"
+    "start": "bun server.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
