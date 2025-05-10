@@ -1,0 +1,18 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+
+CREATE TABLE IF NOT EXISTS "users" (
+    id SERIAL PRIMARY KEY,
+    uuid UUID DEFAULT gen_random_uuid() UNIQUE NOT NULL,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    hashed_password TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS "keys" (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    key TEXT NOT NULL,
+    iv TEXT NOT NULL,
+    note TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES "users" (id) ON DELETE CASCADE
+);

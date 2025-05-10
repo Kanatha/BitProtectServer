@@ -1,0 +1,18 @@
+{
+  "name": "bitprotectserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^5.1.0",
+    "pg": "^8.14.1"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "satrt": "node server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
